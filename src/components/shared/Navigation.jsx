@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-/* prettier-ignore */
 import {
   FaGithub,
   FaLinkedin,
@@ -15,7 +14,7 @@ import { destroySession } from '../../redux/slices/loginSlice';
 const Navigation = () => {
   const dispatch = useDispatch();
   const userToken = sessionStorage.getItem('authToken');
-  const user = JSON.parse(sessionStorage.getItem('userCredentials'));
+  const user = JSON.parse(sessionStorage.getItem('userCredentials')) || {};
 
   const [isOpenMenu, setIsOpenMenu] = useState(false);
 
@@ -41,20 +40,23 @@ const Navigation = () => {
                 <NavLink
                   to="/"
                   className="block p-2 pl-4 hover:bg-[var(--green)] hover:text-white text-xl font-bold md:hover:transition "
+                  onClick={toggleOpenMenu}
                 >
                   Home
                 </NavLink>
-                {user.role === 'admin' && (
+                {user.role && user.role === 'admin' && (
                 <>
                   <NavLink
                     to="/newcar"
                     className="block p-2 pl-4 hover:bg-[var(--green)] hover:text-white text-xl font-bold md:hover:transition"
+                    onClick={toggleOpenMenu}
                   >
                     Create Car
                   </NavLink>
                   <NavLink
                     to="/deletecar"
                     className="block p-2 pl-4 hover:bg-[var(--green)] hover:text-white text-xl font-bold md:hover:transition"
+                    onClick={toggleOpenMenu}
                   >
                     Delete Car
                   </NavLink>
@@ -65,6 +67,7 @@ const Navigation = () => {
                 <NavLink
                   to="/rentals"
                   className="block p-2 pl-4 hover:bg-[var(--green)] hover:text-white text-xl font-bold md:hover:transition"
+                  onClick={toggleOpenMenu}
                 >
                   My Rentals
                 </NavLink>
@@ -73,19 +76,47 @@ const Navigation = () => {
                 <NavLink
                   to="/rental/new"
                   className="block p-2 pl-4 hover:bg-[var(--green)] hover:text-white text-xl font-bold md:hover:transition"
+                  onClick={toggleOpenMenu}
                 >
                   New Rental
                 </NavLink>
               </li>
+              {user.id === undefined && (
+              <li>
+                <NavLink
+                  to="/login"
+                  className="block p-2 pl-4 hover:bg-[var(--green)] hover:text-white text-xl font-bold md:hover:transition"
+                  onClick={toggleOpenMenu}
+                >
+                  Login
+                </NavLink>
+              </li>
+              )}
+              {user.id === undefined && (
+              <li>
+                <NavLink
+                  to="/signup"
+                  className="block p-2 pl-4 hover:bg-[var(--green)] hover:text-white text-xl font-bold md:hover:transition"
+                  onClick={toggleOpenMenu}
+                >
+                  Register
+                </NavLink>
+              </li>
+              )}
+              {user.id !== undefined && (
               <li>
                 <button
                   type="button"
                   className="block w-full text-left p-2 pl-4 hover:bg-[var(--red)] hover:text-white text-xl font-bold md:hover:transition"
-                  onClick={logoutSubmit}
+                  onClick={() => {
+                    logoutSubmit();
+                    toggleOpenMenu();
+                  }}
                 >
                   Logout
                 </button>
               </li>
+              )}
             </ul>
           </aside>
         )}
@@ -104,7 +135,7 @@ const Navigation = () => {
               >
                 Home
               </NavLink>
-              {user.role === 'admin' && (
+              {user.role && user.role === 'admin' && (
                 <>
                   <NavLink
                     to="/newcar"
@@ -139,15 +170,39 @@ const Navigation = () => {
                 New Rental
               </NavLink>
             </li>
+            {user.id === undefined && (
+              <li>
+                <NavLink
+                  to="/login"
+                  className="block p-2 pl-4 hover:bg-[var(--green)] hover:text-white text-xl font-bold md:hover:transition"
+                >
+                  LOGIN
+                </NavLink>
+              </li>
+            )}
+            {user.id === undefined && (
             <li>
-              <button
-                type="button"
-                className="block w-full text-left p-2 pl-4 hover:bg-[var(--red)] hover:text-white text-xl font-bold md:hover:transition"
-                onClick={logoutSubmit}
+              <NavLink
+                to="/signup"
+                className="block p-2 pl-4 hover:bg-[var(--green)] hover:text-white text-xl font-bold md:hover:transition"
               >
-                Logout
-              </button>
+                REGISTER
+              </NavLink>
             </li>
+            )}
+            {user.id !== undefined && (
+              <li>
+                <button
+                  type="button"
+                  className="block w-full text-left p-2 pl-4 hover:bg-[var(--red)] hover:text-white text-xl font-bold md:hover:transition"
+                  onClick={
+                    logoutSubmit
+                  }
+                >
+                  LOGOUT
+                </button>
+              </li>
+            )}
           </ul>
           <footer>
             <div className="flex justify-center mt-auto">
