@@ -19,11 +19,13 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Install](#install)
   - [Usage](#usage)
   - [Linters](#linters)
 - [👥 Authors](#authors)
+- [📖 Kanban Board](#kanban-board)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [🙏 Acknowledgements](#acknowledgements)
@@ -122,6 +124,14 @@ Clone the repository:
     npx eslint "**/*.{js,jsx}" --fix
   ```
 
+<!-- LIVE DEMO -->
+
+## 🚀 Live Demo <a name="live-demo"></a>
+- [Link to front end](https://appointwheels.onrender.com/)
+- [Link to back end](https://rails-appointmentwheels.onrender.com/api-docs/index.html)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
@@ -145,6 +155,16 @@ Clone the repository:
 
 - GitHub: [RysthCraft](https://github.com/Rysth)
 - LinkedIn: [John Palacios](https://www.linkedin.com/in/john-palacios-rysthcraft)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- KANBAN BOARD -->
+
+## 📖 Kanban-Board <a name="kanban-board"></a>
+
+- **Kanban Board Link:** [Kanban Board](https://github.com/users/Rysth/projects/2)
+- **Kanban Board picture:** [Picture](./src/assets/images/kanban.png)
+- **Number of Team Members:** 4
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
