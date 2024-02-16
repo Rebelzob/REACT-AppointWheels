@@ -22,7 +22,7 @@ const App = () => {
         <NotificationContainer />
       </header>
       <main className="flex flex-col md:flex-row">
-        {active && <Navigation />}
+        <Navigation />
         <Routes>
           <Route
             path="/login"
@@ -43,9 +43,7 @@ const App = () => {
           <Route
             path="/"
             element={(
-              <ProtectedRoute isAuthenticated={active} redirectTo="/login">
-                <HomePage />
-              </ProtectedRoute>
+              <HomePage />
             )}
           />
           <Route
@@ -67,9 +65,7 @@ const App = () => {
           <Route
             path="/car/:id"
             element={(
-              <ProtectedRoute isAuthenticated={active} redirectTo="/login">
-                <CarDetail />
-              </ProtectedRoute>
+              <CarDetail />
             )}
           />
           <Route
