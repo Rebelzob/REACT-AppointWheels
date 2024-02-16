@@ -35,7 +35,7 @@
 
 # 💻 Backend Link repository <a name="backend-link"></a>
 
-- [**Backend Link**](https://github.com/Rysth/RAILS-AppointWheels)
+- [**Backend Link**](https://github.com/Rebelzob/RAILS-AppointWheels.git)
 
 <!-- PROJECT DESCRIPTION -->
 
@@ -90,7 +90,7 @@ To get a local copy up and running, follow these steps.
 Clone the repository:
 
 ```bash
- git clone https://github.com/Rysth/REACT-AppointWheels.git
+ git clone https://github.com/Rebelzob/REACT-AppointWheels.git
  cd REACT-AppointWheels
  code .  # To open VS Code Editor
 ```
@@ -127,8 +127,8 @@ Clone the repository:
 <!-- LIVE DEMO -->
 
 ## 🚀 Live Demo <a name="live-demo"></a>
-- [Link to front end](https://appointwheels.onrender.com/)
-- [Link to back end](https://rails-appointmentwheels.onrender.com/api-docs/index.html)
+- [Link to front end](https://react-appointwheels.fly.dev/)
+- [Link to back end](https://rails-appointwheels-bold-butterfly-8850-db.fly.dev/api-docs/index.html)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
